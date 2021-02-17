@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+.right {
+    float:right!important;
+}
+
+.nav-right{
+    float:right!important;
+}
+
+.nav-right {
+    float:right!important;
+}
+
+.img-services {
+    width: 200px;
+    height: 200px;
+}
+.banner-info, .banner-image {
+    margin: 30px 0;
+}
+
+.big-text {
+    font-size: 52px;
+    margin: 20px 0;
+    color:darkorange;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.medium-text {
+    font-size: 30px;
+}
+
+a.btn {
+    margin: 30px 10px;
+    width:150px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+a.btn-first
+{
+    background-color: darkorange;
+    color: #fff;
+}
+
+a.btn-second {
+    background: transparent;
+    border: 1px solid darkorange;
+    color:#333;
+}
+
+a.btn:hover {
+    background: darkorange;
+    border:none;
+    color:#fff;
+    box-shadow: 5px 5px 10px #999;
+    transition: 0.3s;
+}
