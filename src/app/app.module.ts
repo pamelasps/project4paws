@@ -21,11 +21,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     FooterComponent,
     PetCarerComponent,
-<<<<<<< HEAD
-    PetCarerProfileComponent   
-=======
+    PetCarerProfileComponent,
     SigninComponent
->>>>>>> 3264736feab6efbd821f306880661342e6fc6ca1
   ],
   imports: [
     BrowserModule,
