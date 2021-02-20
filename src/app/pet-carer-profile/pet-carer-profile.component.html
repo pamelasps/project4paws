@@ -1,0 +1,70 @@
+<div class="carer-content-block col-sm-4 mt-2 mb-10">
+    <h2>My Profile</h2>
+    
+    <!--Profile Image-->
+    <div class="col-md-6">
+        <div class="profile-img">            
+            <img class="rounded-circle" src="https://www.rover.com/cf-image-cdn/remote/images/people/APZjvKYg/hfyljxoopf/original?width=450&height=450&quality=70&fit=cover"
+            data-holder-rendered="true" alt="profile photo" width="180" height="200">
+            <div class="file">
+                Change Photo
+                <input type="file" name="file"/>
+            </div>
+        </div>
+    </div> 
+   
+    <form>
+      <div class="form-group">          
+        <br><br>
+        <label for="petCarerPreference">Breed Preference</label>
+          <select class="form-control" id="petCarerProvince" required="required">
+            <option value="">Please choose the breed</option>
+            <option value="">All dogs are my favorite!</option> 
+            <option value="afgound">Afgan Hound</option>   
+            <option value="bulldog">Bull Dog</option>           
+            <option value="goldendoodle">Golden Doodle</option>
+            <option value="goldenretriever">Golden Retriever</option>
+            <option value="poodle">Poodle</option>
+            <option value="others">Others</option>
+          </select>
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="petCarerNeighborhood">Service Neighborhood</label>
+        <select class="form-control" id="petCarerNeighborhood" required="required">
+            <option value="">Please choose your service neighborhood</option>
+            <option value="allLondon">All London area.</option>
+            <option value="argyle">Argyle</option>
+            <option value="byron">Byron</option>
+            <option value="calring">Carling Heights</option>
+            <option value="cherryhill">Cherry Hill</option>
+            <option value="masonville">Masonville</option>
+            <option value="medway">Medway</option>
+            <option value="oldnorth">Old North</option>
+            <option value="woodfield">Woodfield</option>
+          </select>
+      </div>
+  
+     <br>
+      <div class="card">
+        <div class="card-header">
+           About Me
+        </div>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"placeholder="Tell pet owners about yourself and dog walker experience."></textarea>
+      </div>
+  
+      <br>
+      <div class="card">
+        <div class="card-header">
+            Police Background Check
+        </div>
+        <div class="card-body">          
+          <p class="card-text">Please upload a file.</p>         
+          <input type="file" id="policeCheckFile" name="policeCheckFile">   
+        </div>
+      </div>
+ 
+      <a class="btn btn-first" id="profile" routerLink ="/profile" routerLinkActive="active">Submit</a>
+    </form>  
+  </div>

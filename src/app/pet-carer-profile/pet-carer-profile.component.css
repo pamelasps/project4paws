@@ -4,5 +4,11 @@
     margin: auto;
     width: 60%;
     padding: 10px;
-   
+    background-color:#F8F8F8;   
+}
+
+col-md-6 {
+     
+        text-align: right;  
+        
 }
