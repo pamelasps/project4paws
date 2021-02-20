@@ -12,6 +12,7 @@ import { PetCarerProfileComponent } from './pet-carer-profile/pet-carer-profile.
 import { SigninComponent } from './signin/signin.component';
 
 import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     PetCarerComponent,
     PetCarerProfileComponent,
-    SigninComponent
+    SigninComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

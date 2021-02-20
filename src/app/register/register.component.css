@@ -1,0 +1,27 @@
+.carer-content-block {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+button {
+    background-color: #f77a06;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.profile {
+    width: 20%;
+    border-radius: 50%;
+}
