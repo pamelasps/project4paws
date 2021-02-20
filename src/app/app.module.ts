@@ -7,6 +7,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { PetCarerComponent } from './pet-carer/pet-carer.component';
+import { SigninComponent } from './signin/signin.component';
+
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +18,13 @@ import { PetCarerComponent } from './pet-carer/pet-carer.component';
     NavbarComponent,
     HomeComponent,
     FooterComponent,
-    PetCarerComponent
+    PetCarerComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
