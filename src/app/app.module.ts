@@ -9,6 +9,9 @@ import { FooterComponent } from './footer/footer.component';
 import { PetCarerComponent } from './pet-carer/pet-carer.component';
 import { PetCarerProfileComponent } from './pet-carer-profile/pet-carer-profile.component';
 
+import { SigninComponent } from './signin/signin.component';
+
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,11 +21,16 @@ import { PetCarerProfileComponent } from './pet-carer-profile/pet-carer-profile.
     HomeComponent,
     FooterComponent,
     PetCarerComponent,
+<<<<<<< HEAD
     PetCarerProfileComponent   
+=======
+    SigninComponent
+>>>>>>> 3264736feab6efbd821f306880661342e6fc6ca1
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
