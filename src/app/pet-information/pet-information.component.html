@@ -1,0 +1,87 @@
+
+<div class="carer-content-block col-sm-4 mt-2 mb-10">
+    <h2>Pet Information</h2>
+    
+    <form>
+        <br>
+        <div class="form-group">
+            <label for="petName">Pet's Name</label>
+            <input type="text" class="form-control" id="petName">
+        </div>
+
+        <div class="form-group">          
+            <label for="petCarerPreference">Breed Preference</label>
+            <select class="form-control" id="petCarerPreference" required="required">
+                <option value="">Please choose the breed</option>
+                <option value="">All dogs are my favorite!</option> 
+                <option value="afgound">Afgan Hound</option>   
+                <option value="bulldog">Bull Dog</option>           
+                <option value="goldendoodle">Golden Doodle</option>
+                <option value="goldenretriever">Golden Retriever</option>
+                <option value="poodle">Poodle</option>
+                <option value="others">Others</option>
+            </select>
+        </div>   
+
+      <br>
+      <div class="form-group">
+        <label for="petSize">What size is your pet?</label>
+        <img src="/assets/images/petSize.jpg" alt="petSize" class="petSize" width="550" height="100">
+      </div>
+  
+    <div class="row">       
+            <div class="form-group col-sm-4">
+                <label for="petSize">Size</label>
+                <select class="form-control" id="petSize" required="required">
+                    <option value="question">What size is your dog?</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                    <option value="giant">Giant</option>
+                </select>
+            </div>
+   
+            <div class="form-group col-sm-4">
+                <label for="petColor">Color</label>
+                <input type="text" class="form-control" id="petColor">
+             </div>
+
+             <div class="form-group col-sm-4">
+                <label for="petAge">Age</label>
+                    <select class="form-control" id="petAge" required="required">
+                    <option value="question">How old is your dog?</option>
+                    <option value="0">Age less than 1</option>
+                    <option value="1">Age 1-3</option>
+                    <option value="4">Age 4-5</option>
+                    <option value="6">Age 6-8</option>
+                    <option value="9">Age 9-10</option>
+                    <option value="11">Age 11-13</option>
+                    <option value="14">Age 14-16</option>
+                    <option value="17">Age 17-20</option>
+                    <option value="20">Age older than 20</option>
+                    </select>
+             </div>
+        </div>
+    
+    <div class="form-group">
+        <label for="petHabit">Habits</label>
+        <input type="text" class="form-control" id="petHabit">
+    </div>     
+  
+      <br>
+      <div class="card">
+        <div class="card-header">Pet's Photo</div>
+        <div class="card-body">   
+            <div class="petPhoto">            
+                <img src="/assets/images/dog3.jpeg" alt="pet photo" width="160" height="200">                 
+            </div>
+            <div class="custom-file">   
+            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="inputGroupFile01">Choose file</label> 
+            </div>
+        </div>
+      </div>
+
+      <a class="btn btn-first" id="profile" routerLink ="/home" routerLinkActive="active">Submit</a>
+    </form>  
+  </div>

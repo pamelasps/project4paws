@@ -13,6 +13,7 @@ import { SigninComponent } from './signin/signin.component';
 
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { PetInformationComponent } from './pet-information/pet-information.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
     PetCarerComponent,
     PetCarerProfileComponent,
     SigninComponent,
-    RegisterComponent
+    RegisterComponent,
+    PetInformationComponent
   ],
   imports: [
     BrowserModule,
