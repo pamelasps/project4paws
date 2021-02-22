@@ -1,23 +1,28 @@
 <div class="carer-content-block col-sm-4 mt-2 mb-10">
   <h2>Basic Info</h2>
 
-  <form>
-    <div class="form-group">
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group" >
+
+      <!--{{userForm.value | json}} <br>
+      <hr>
+      {{petCarerInfo | json}}-->
+
       <label for="petCarerName">Name</label>
-      <input type="text" class="form-control" id="petCarerName">
+      <input type="text" class="form-control" id="petCarerName" name="petCarerName" [(ngModel)] = "petCarerInfo.name">
     </div>
     <div class="form-group">
       <label for="petCarerEmail">Email</label>
-      <input type="email" class="form-control" id="petCarerEmail">
+      <input type="email" class="form-control" id="petCarerEmail" name="petCarerEmail" [(ngModel)] = "petCarerInfo.email">
     </div>
     <div class="row">
       <div class="form-group col-sm-4">
         <label for="petCarerCity">City</label>
-        <input type="text" class="form-control" maxlenght="75" id="petCarerCity">
+        <input type="text" class="form-control" maxlenght="75" id="petCarerCity" name="petCarerCity" [(ngModel)] = "petCarerInfo.city">
       </div>
       <div class="form-group col-sm-4">
         <label for="petCarerProvince">Province</label>
-        <select class="form-control" id="petCarerProvince" required="required">
+        <select class="form-control" id="petCarerProvince" name="petCarerProvince" required="required" [(ngModel)] = "petCarerInfo.province">
           <option value="">---------</option>
           <option value="AB">Alberta</option>
           <option value="BC">British Columbia</option>
@@ -36,19 +41,19 @@
       </div>
       <div class="form-group col-sm-4">
         <label for="petCarerPostcode">Postcode</label>
-        <input type="text" class="form-control" id="petCarerPostcode">
+        <input type="text" class="form-control" id="petCarerPostcode" name="petCarerPostcode" [(ngModel)] = "petCarerInfo.postcode">
       </div>
       <div class="form-group col-sm-4">
         <label for="petCarerCountry">Country</label>
-        <input type="text" class="form-control" id="petCarerCountry" value="Canada">
+        <input type="text" class="form-control" id="petCarerCountry" value="Canada" name="petCarerCountry" [(ngModel)] = "petCarerInfo.country">
       </div>
     </div>
 
     <div class="form-group">
       <label for="phone">Phone Number</label>
-      <input type="tel" class="form-control" id="phone" name="phone" placeholder="(123) 456-678"
-        pattern="[(0-9]{3}) [0-9]{3}-[0-9]{3}" required><br><br>
+      <input type="tel" class="form-control" id="phone" name="phone" placeholder="(123) 456-678" [(ngModel)] = "petCarerInfo.phone"><br><br>
     </div>
+    <input class="btn btn-first" type="submit" value="Submit">
     <a class="btn btn-first" id="profile" routerLink ="/profile" routerLinkActive="active">Edit Profile</a>
   </form>
 
