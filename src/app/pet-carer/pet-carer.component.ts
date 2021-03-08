@@ -2,13 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Petcarer } from '../petcarer';
 import { EnrollmentService } from '../enrollment.service';
 
+
 @Component({
   selector: 'app-pet-carer',
   templateUrl: './pet-carer.component.html',
   styleUrls: ['./pet-carer.component.css']
 })
+
 export class PetCarerComponent implements OnInit {
-  petCarerInfo = new Petcarer('John', 'john@email.com', 'St Thomas', 'ON', 'M6K5R7', 'CA', 12345678);
+  showMe: boolean = false;
+  hideMe:boolean = true;
+  petCarerInfo = new Petcarer('', '','','', '', '', '', '', 9876543210,'','','','','','');
+  
 
   constructor(
     private _enrollmentService: EnrollmentService
@@ -25,5 +30,13 @@ export class PetCarerComponent implements OnInit {
       error => console.error('Error!', error)
     )
   }
+
+  trigger(){
+    this.showMe=!this.showMe;
+    this.hideMe=!this.hideMe;
+  }
+
+
+
 
 }
