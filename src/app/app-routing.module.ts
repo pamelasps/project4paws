@@ -6,6 +6,7 @@ import { PetCarerProfileComponent } from './pet-carer-profile/pet-carer-profile.
 import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component'
 import { PetInformationComponent } from './pet-information/pet-information.component';
+import { SearchComponent } from './search/search.component'
 
 const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch:'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path:'profile', component:PetCarerProfileComponent},
   { path: 'signin', component:SigninComponent},
   { path: 'register', component:RegisterComponent},
-  { path: 'petInfo', component:PetInformationComponent}
+  { path: 'petInfo', component:PetInformationComponent},
+  { path: 'search', component:SearchComponent}
 ];
 
 @NgModule({
