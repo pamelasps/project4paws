@@ -1,18 +1,17 @@
-export class PetCarerProfile {
-    constructor(
-        //public name: string,
-        //public email: string,
-        //public city: string,
-        //public province: string,
-        //public postcode: string,
-        //public country: string,
-        //public phone: number,
-    public photo: string,
-    public breedPref: string,
-    public carerNeighbor: string,
-    public aboutCarer: string,
-    public bgcheck: string,   
-     
-    ){}
-  
+export interface PetCarerProfile {
+    firstName: string,
+    lastName: string,
+    email: string,
+    city: string,
+    province: string,
+    postcode: string,
+    country: string,
+    dob: any,
+    phone: any,
+    photo: any,
+    breedPref: string,
+    carerNeighbor: string,
+    aboutCarer: string,
+    bgcheck: any,  
+    hPrice: any,  
 }

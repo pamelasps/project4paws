@@ -1,6 +1,9 @@
 
   <div class=" carer-content-block col-sm-4 mt-2 mb-10">
     <h2>My Profile</h2>
+    <ul *ngFor="let profile of carerProfile">
+      <li>{{carerProfile | json}}</li>
+    </ul>
 
     <div class="alert alert-success" role="alert">
       <h4 class="alert-heading">Well done!</h4>
