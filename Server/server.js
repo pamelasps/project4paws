@@ -52,20 +52,6 @@ app.post('/enroll', function (req, res) { //towards server
     let bgcheck = postBody.bgcheck;
     let hPrice = postBody.hPrice;
 
-//'INSERT INTO sitter (sitter_firstname, sitter_lastname, sitter_email, sitter_phone, sitter_dob, sitter_photo, sitter_policeCheck, sitter_price) VALUES (?,?,?,?,?,?,?,?)', [firstName, lastName, email, phone, dob, photo, bgCheck, hPrice]
-
-
-/*
-    db.query('INSERT INTO carer (name, email, city, province, postcode, country, phone) VALUES (?,?,?,?,?,?,?)', [firstName, email, city, province, postcode, country, phone],
-        (err, res) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('Registered!');
-            }
-
-        });
-        */
 
         db.query('INSERT INTO sitter (sitter_firstname, sitter_lastname, sitter_email, sitter_phone, sitter_dob, sitter_photo, sitter_policeCheck, sitter_price) VALUES (?,?,?,?,?,?,?,?)', [firstName, lastName, email, phone, dob, photo, bgcheck, hPrice],
         (err, res) => {
@@ -81,6 +67,45 @@ app.post('/enroll', function (req, res) { //towards server
     res.status(200).send({ "message": "Data Received" });
    
 });
+
+// Pet Owner Register
+
+app.post('/petOwner', function (req, res) { //towards server
+    //console.log(req.body);
+    let postBody = req.body;
+    console.log(postBody);
+
+    let sql = "INSERT INTO owner SET ?";
+    let postQuery = db.query(sql, postBody, (err, results) => {
+        if (err) throw err;
+        console.log('Registered!');
+        res.status(200).end(JSON.stringify(results.insertId));
+    })
+   
+    // let firstName = postBody.firstName;
+    // let lastName = postBody.lastName
+    // let email = postBody.email;
+    // let phone = postBody.phone;
+    // let city = postBody.city;
+    // let province = postBody.province;
+    // let country = postBody.country;
+    // let postalcode = postBody.postcode;
+
+    //     db.query('INSERT INTO owner (owner_firstname, owner_lastname, owner_email, owner_phone, owner_address, owner_city, owner_province, owner_country, owner_postalCode) VALUES (?,?,?,?,?,?,?,?,?)', [firstName, lastName, email, phone, city, province, country, postalcode],
+    //     (err, res) => {
+    //         if (err) {
+    //             console.log(err);
+    //         } else {
+    //             console.log('Registered!');
+    //         }
+
+    //     });
+        
+
+    // res.status(200).send({ "message": "Data Received" });
+   
+});
+
 
 app.listen(PORT, function () {
     console.log("Server running on localhost: " + PORT);

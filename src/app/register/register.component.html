@@ -1,58 +1,75 @@
-<div class="carer-content-block col-sm-4 mt-2 mb-10">
+
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="carer-content-block col-sm-4 mt-2 mb-10">
     <h2 style="text-align: center;">Create your profile to find a pet carer</h2>
     <div class="imgcontainer">
         <img src="/assets/images/dog2.jpg" alt="Profile" class="profile">
     </div>
-  
-    <form>
       <div class="form-group">
-        <label for="petCarerName">Name</label>
-        <input type="text" class="form-control" id="petCarerName">
+        <label for="petOwnerName">Given Name</label>
+        <input type="text" class="form-control" id="petOwnerName" name="petOwnerName"
+        [(ngModel)]="petOwnerInfo.owner_firstname">
       </div>
       <div class="form-group">
-        <label for="petCarerEmail">Email</label>
-        <input type="email" class="form-control" id="petCarerEmail">
+        <label for="petOwnerSurname">Surname</label>
+        <input type="text" class="form-control" id="petOwnerSurname" name="petOwnerSurname"
+        [(ngModel)]="petOwnerInfo.owner_lastname">
+      </div>
+      <div class="form-group">
+        <label for="petOwnerEmail">Email</label>
+        <input type="email" class="form-control" id="petOwnerEmail" name="petOwnerEmail" [(ngModel)]="petOwnerInfo.owner_email">
+      </div>
+      <div class="form-group">
+        <label for="petOwnerAddress">Address</label>
+        <input type="text" class="form-control" maxlenght="75" id="petOwnerAddress" name="petOwnerAddress"
+        [(ngModel)]="petOwnerInfo.owner_address">
       </div>
       <div class="row">
         <div class="form-group col-sm-4">
-          <label for="petCarerCity">City</label>
-          <input type="text" class="form-control" maxlenght="75" id="petCarerCity">
+          <label for="petOwnerCity">City</label>
+          <input type="text" class="form-control" maxlenght="75" id="petOwnerCity" name="petOwnerCity"
+          [(ngModel)]="petOwnerInfo.owner_city">
         </div>
         <div class="form-group col-sm-4">
-          <label for="petCarerProvince">Province</label>
-          <select class="form-control" id="petCarerProvince" required="required">
-            <option value="">---------</option>
-            <option value="AB">Alberta</option>
-            <option value="BC">British Columbia</option>
-            <option value="MB">Manitoba</option>
-            <option value="NB">New Brunswick</option>
-            <option value="NL">Newfoundland and Labrador</option>
-            <option value="NT">Northwest Territories</option>
-            <option value="NS">Nova Scotia</option>
-            <option value="NU">Nunavut</option>
-            <option value="ON">Ontario</option>
-            <option value="PE">Prince Edward Island</option>
-            <option value="QC">Quebec</option>
-            <option value="SK">Saskatchewan</option>
-            <option value="YT">Yukon</option>
-          </select>
+          <label for="petOwnerProvince">Province</label>
+          <select class="form-control" id="petOwnerProvince" name="petOwnerProvince" required="required"
+          [(ngModel)]="petOwnerInfo.owner_province">
+          <option value="">---------</option>
+          <option value="AB">Alberta</option>
+          <option value="BC">British Columbia</option>
+          <option value="MB">Manitoba</option>
+          <option value="NB">New Brunswick</option>
+          <option value="NL">Newfoundland and Labrador</option>
+          <option value="NT">Northwest Territories</option>
+          <option value="NS">Nova Scotia</option>
+          <option value="NU">Nunavut</option>
+          <option value="ON">Ontario</option>
+          <option value="PE">Prince Edward Island</option>
+          <option value="QC">Quebec</option>
+          <option value="SK">Saskatchewan</option>
+          <option value="YT">Yukon</option>
+        </select>
         </div>
         <div class="form-group col-sm-4">
-          <label for="petCarerPostcode">Postcode</label>
-          <input type="text" class="form-control" id="petCarerPostcode">
+          <label for="petOwnerPostcode">Postcode</label>
+          <input type="text" class="form-control" id="petOwnerPostcode" name="petOwnerPostcode"
+          [(ngModel)]="petOwnerInfo.owner_postalCode">
         </div>
         <div class="form-group col-sm-4">
-          <label for="petCarerCountry">Country</label>
-          <input type="text" class="form-control" id="petCarerCountry" value="Canada">
+          <label for="petOwnerCountry">Country</label>
+          <input type="text" class="form-control" id="petOwnerCountry" value="Canada" name="petOwnerCountry"
+            [(ngModel)]="petOwnerInfo.owner_country">
         </div>
       </div>
   
       <div class="form-group" style="margin-bottom: 0px;">
         <label for="phone">Phone Number</label>
-        <input type="tel" class="form-control" id="phone" name="phone" placeholder="(123) 456-678"
-          pattern="[(0-9]{3}) [0-9]{3}-[0-9]{3}" required><br><br>
+          <input type="text" class="form-control" id="phone" name="phone" placeholder="9876543210"
+          [(ngModel)]="petOwnerInfo.owner_phone"><br><br>
       </div>
-      <button class="btn btn-first" type="submit" routerLink ="/petInfo" routerLinkActive="active">Create Account</button>
-    </form>
+      <input class="btn btn-first" type="submit" value="Submit">
+      <!-- <button class="btn btn-first" type="submit" routerLink ="/petInfo" routerLinkActive="active">Create Account</button> -->
 </div>
+</form>
+
 <br>
