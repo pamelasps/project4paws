@@ -12,7 +12,7 @@ import { EnrollmentService } from '../enrollment.service';
 export class PetCarerComponent implements OnInit {
   showMe: boolean = false;
   hideMe:boolean = true;
-  petCarerInfo = new Petcarer('', '','','', '', '', '', '', 9876543210,'','','','','','');
+  petCarerInfo = new Petcarer('', '','','', '', '', '', '', '', '','','','','','','','','','','','');
   
 
   constructor(

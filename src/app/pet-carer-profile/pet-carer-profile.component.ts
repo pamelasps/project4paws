@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Petcarer } from '../petcarer';
-import { PetCarerProfile } from '../petcarerprofile';
+//import { Petcarer } from '../petcarer';
+//import { PetCarerProfile } from '../petcarerprofile';
 import { EnrollmentService } from '../enrollment.service';
 
 
@@ -10,22 +10,15 @@ import { EnrollmentService } from '../enrollment.service';
   styleUrls: ['./pet-carer-profile.component.css']
 })
 export class PetCarerProfileComponent implements OnInit {
-//petCarerInfo = new Petcarer('', '', '', '', '', '', 12345);  
-petCarerProfile = new PetCarerProfile('','','','','');
 
-  constructor(
-    private _enrollmentService: EnrollmentService
-  ) { }
+  public carerProfile  = [] as any;
 
-  ngOnInit(): void {
+  constructor(private _profileService: EnrollmentService) { }
+
+  ngOnInit() {
+    this._profileService.getProfile()
+    .subscribe(data => this.carerProfile = data);
   }
-  onSubmit(){
-    console.log(this.petCarerProfile);
-    //this._enrollmentService.enroll(this.petCarerProfile)
-    //.subscribe(
-     // data => console.log('Success!', data),
-     // error => console.error('Error!', error)
-   // )
-  }
+  
 
 }

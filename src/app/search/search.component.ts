@@ -3,8 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
     selector: 'search',
     templateUrl: './search.component.html',
-    styleUrls: ['./search.component.css'],
+    styleUrls: ['./search.component.css']
     })
+
     export class SearchComponent {
       elements: any = [
         {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
