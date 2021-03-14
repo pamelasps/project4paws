@@ -15,6 +15,9 @@ import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { PetInformationComponent } from './pet-information/pet-information.component';
 
+import { SearchComponent } from './search/search.component';
+
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -28,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     PetCarerProfileComponent,
     SigninComponent,
     RegisterComponent,
-    PetInformationComponent
+    PetInformationComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
