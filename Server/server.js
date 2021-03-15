@@ -29,8 +29,8 @@ app.listen(PORT, function () {
 let db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
-    database: '4pawsv6'
+    password: '',
+    database: '4paws'
 
 });
 

@@ -1,6 +1,7 @@
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-  <div class="carer-content-block col-sm-4 mt-2 mb-10">
+
+  <div *ngIf="hideCF1" class="carer-content-block col-sm-4 mt-2 mb-10">
     <h2 style="text-align: center;">Create your profile to find a pet carer</h2>
     <div class="imgcontainer">
         <img src="/assets/images/dog2.jpg" alt="Profile" class="profile">
@@ -61,15 +62,68 @@
             [(ngModel)]="petOwnerInfo.owner_country">
         </div>
       </div>
-  
+      
+      <div class="form-group col-sm-8">
+        <label for="owner_dob">Date of Birthday</label>
+        <input class="form-control" type="date" value="2011-08-19" id="owner_dob" name="owner_dob"
+          [(ngModel)]="petOwnerInfo.owner_dob">
+      </div>
+
       <div class="form-group" style="margin-bottom: 0px;">
         <label for="phone">Phone Number</label>
           <input type="text" class="form-control" id="phone" name="phone" placeholder="9876543210"
           [(ngModel)]="petOwnerInfo.owner_phone"><br><br>
       </div>
-      <input class="btn btn-first" type="submit" value="Submit">
-      <!-- <button class="btn btn-first" type="submit" routerLink ="/petInfo" routerLinkActive="active">Create Account</button> -->
-</div>
+
+      <div class="form-group">
+        <label for="owner_password">Choose a password</label>
+        <input type="text" class="form-control" id="owner_password" name="owner_password"
+          [(ngModel)]="petOwnerInfo.owner_password"><br>
+      </div>
+      <a class="btn btn-first" id="profile" (click)="trigger()">Next</a>
+  </div>
+
+  <div *ngIf="showCF2" class="carer-content-block col-sm-4 mt-2 mb-10">
+    <!--Pet Owner form part 2 - Bank Information-->
+
+    <div class="card">
+      <div class="card-header">
+        Bank Information
+      </div>
+      <div class="card-body">
+        <div class="card">
+          <div class="form-group" style="margin-bottom: 0px;">
+            <label for="bankname">Bank Name</label>
+              <input type="text" class="form-control" id="bankname" name="bankname" 
+              [(ngModel)]="petOwnerInfo.owner_bankName"><br><br>
+          </div>
+          <br>
+          <div class="form-group" style="margin-bottom: 0px;">
+            <label for="bankbranch">Branch</label>
+              <input type="text" class="form-control" id="branch" name="branch" 
+              [(ngModel)]="petOwnerInfo.owner_bankBranch"><br><br>
+          </div>
+          <br>
+          <div class="form-group" style="margin-bottom: 0px;">
+            <label for="bankacctype">Account Type</label>
+              <input type="text" class="form-control" id="bankacctype" name="bankacctype" 
+              [(ngModel)]="petOwnerInfo.owner_bankAccType"><br><br>
+          </div>
+          <br>
+          <div class="form-group" style="margin-bottom: 0px;">
+            <label for="bankaccnum">Account Number</label>
+              <input type="text" class="form-control" id="bankaccnum" name="bankaccnum" 
+              [(ngModel)]="petOwnerInfo.owner_bankAccNum"><br><br>
+          </div>
+        </div>
+      </div>
+        
+      
+
+    </div>
+    <input class="btn btn-first" type="submit" id="submit" value="Submit">
+  </div>
+
 </form>
 
 <br>
