@@ -148,7 +148,9 @@ CREATE TABLE `sitter` (
   `sitter_policeCheck` blob NOT NULL,
   `sitter_price` double NOT NULL,
   `sitter_intro` varchar(250) NOT NULL,
-  `sitter_password` varchar(15) NOT NULL
+  `sitter_password` varchar(15) NOT NULL,
+  `sitter_location` varchar(100) NOT NULL,
+  `sitter_petpref` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
