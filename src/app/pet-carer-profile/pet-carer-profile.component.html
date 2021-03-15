@@ -1,97 +1,68 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-  <div class=" carer-content-block col-sm-4 mt-2 mb-10">
-    <h2>My Profile</h2>
-    <ul *ngFor="let profile of carerProfile">
-      <li>{{carerProfile | json}}</li>
-    </ul>
-
-    <div class="alert alert-success" role="alert">
-      <h4 class="alert-heading">Well done!</h4>
-      <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so
-        that you can see how spacing within an alert works with this kind of content.</p>
-      <hr>
-      <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-    </div>
-
-  </div>
-
-
-
-<!--Profile Image-->
-<!--carer-content-block
-
-    <div class="profile-img">
-      <img class="rounded-circle" src="/assets/images/petCarerProfile.JPG" data-holder-rendered="true" 
-        alt="profile photo" width="160" height="180" >
-    </div>
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-      {{userForm.value | json}} 
-      <br>
-      {{petCarerInfo | json}}
-      {{petCarerProfile | json}}
-
+<div class="carer-content-block col-sm-4 mt-2 mb-10">
+    <h2>Pet Carer Profile</h2>
     <br>
-    <div class="custom-file">
-      <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="photo" [(ngModel)] = "petCarerProfile.photo">
-      <label class="custom-file-label" for="inputGroupFile01" >Choose file</label>
-    </div>
+    <div class="card mt-2">
+        <img src="https://icons-for-free.com/iconfiles/png/512/avatar+human+man+profile+icon-1320085876716628234.png" id="carerPhoto" class="card-img-top" alt="...">
+        
+        <div class="card-body">
+            <h5 class="card-title">Name</h5>
+            <p class="card-text">{{petCarerInfo.sitter_firstname}}&nbsp;{{petCarerInfo.sitter_lastname}}</p>
 
-
-    <div class="form-group">
-      <br>
-      <label for="petCarerPreference">Breed Preference</label>
-      <select class="form-control" id="petCarerProvince" required="required" name="breedPref" [(ngModel)] = "petCarerProfile.breedPref">
-        <option value="">Please choose the breed</option>
-        <option value="">All dogs are my favorite!</option>
-        <option value="afgound">Afgan Hound</option>
-        <option value="bulldog">Bull Dog</option>
-        <option value="goldendoodle">Golden Doodle</option>
-        <option value="goldenretriever">Golden Retriever</option>
-        <option value="poodle">Poodle</option>
-        <option value="others">Others</option>
-      </select>
-    </div>
-
-    <br>
-    <div class="form-group">
-      <label for="petCarerNeighborhood">Service Neighborhood</label>
-      <select class="form-control" id="petCarerNeighborhood" required="required" name="carerNeighbor" [(ngModel)] = "petCarerProfile.carerNeighbor">
-        <option value="">Please choose your service neighborhood</option>
-        <option value="allLondon">All London area.</option>
-        <option value="argyle">Argyle</option>
-        <option value="byron">Byron</option>
-        <option value="calring">Carling Heights</option>
-        <option value="cherryhill">Cherry Hill</option>
-        <option value="masonville">Masonville</option>
-        <option value="medway">Medway</option>
-        <option value="oldnorth">Old North</option>
-        <option value="woodfield">Woodfield</option>
-      </select>
-    </div>
-
-    <br>
-    <div class="card">
-      <div class="card-header">
-        About Me
-      </div>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
-        placeholder="Tell pet owners about yourself and dog walker experience." name="aboutCarer" [(ngModel)] = "petCarerProfile.aboutCarer"></textarea>
-    </div>
-
-    <br>
-    <div class="card">
-      <div class="card-header">
-        Police Background Check
-      </div>
-      <div class="card-body">
-        <p class="card-text">Please upload a file.</p>
-        <div class="custom-file">
-          <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="bgcheck" [(ngModel)] = "petCarerProfile.bgcheck">
-          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
         </div>
-      </div>
+        <div class="card-body">
+            <h5 class="card-title">Email</h5>
+            <p class="card-text">{{petCarerInfo.sitter_email}}</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Contact</h5>
+            <p class="card-text">{{petCarerInfo.sitter_phone}}</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Address</h5>
+            <p class="card-text">{{petCarerInfo.sitter_address}}</p>
+            <p class="card-text">{{petCarerInfo.sitter_city}}</p>
+            <p class="card-text">{{petCarerInfo.sitter_province}}</p>
+            <p class="card-text">{{petCarerInfo.sitter_postalCode}}</p>
+            <p class="card-text">{{petCarerInfo.sitter_country}}</p>
+
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Date of Birthday</h5>
+            <p class="card-text">{{petCarerInfo.sitter_dob}}</p>
+
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Professional Preferences</h5>
+            <p><strong>Pet Preference</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_petpref}}</p>
+            <p><strong>Location :</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_location}}</p>
+            <p><strong>Hourly Price</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_price}}</p>
+            <p><strong>About Me :</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_intro}}</p>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Bank Information</h5>
+            <p><strong>Bank Name</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_bankName}}</p>
+            <p><strong>Bank Number</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_bankAccNum}}</p>
+            <p><strong>Bank Type</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_bankAccType}}</p>
+            <p><strong>Bank Branch</strong></p>
+            <p class="card-text">{{petCarerInfo.sitter_bankBranch}}</p>
+        </div>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <a class="btn btn-first" routerLink="/signin" routerLinkActive="active">Sign In</a>
+            </div>
+            <div class="form-group col-sm-6">
+                <a class="btn btn-first" routerLink="/petCarer" routerLinkActive="active">Edit</a>
+            </div>
+        </div>
     </div>
 
-    <a class="btn btn-first" id="profile" routerLink="/profile" routerLinkActive="active">Submit</a>
-  </form>
-  -->
+</div>

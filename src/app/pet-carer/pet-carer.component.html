@@ -1,11 +1,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
-  <!--{{userForm.value | json}} <br>
-        <hr>
-  {{petCarerInfo | json}}-->
+  <!--  {{userForm.value | json}} <br>
+        {{petCarerInfo | json}}  -->
 
-  <div *ngIf="hideMe" class="carer-content-block col-sm-4 mt-2 mb-10">
+  <div *ngIf="hideCF1" class="carer-content-block col-sm-4 mt-2 mb-10">
     <h2>Basic Info</h2>
     <div class="row">
       <div class="form-group col-sm-6">
@@ -24,7 +23,7 @@
       <input type="email" class="form-control" id="sitter_email" name="sitter_email"
         [(ngModel)]="petCarerInfo.sitter_email">
     </div>
-    <div class="form-group col-sm-12">
+    <div class="form-group">
       <label for="sitter_address">Address</label>
       <input type="text" class="form-control" id="sitter_address" name="sitter_address"
         [(ngModel)]="petCarerInfo.sitter_address">
@@ -60,37 +59,30 @@
         <input type="text" class="form-control" id="sitter_postalCode" name="sitter_postalCode"
           [(ngModel)]="petCarerInfo.sitter_postalCode">
       </div>
-      <div class="row">
-        <div class="form-group col-sm-4">
-          <label for="sitter_country">Country</label>
-          <input type="text" class="form-control" id="sitter_country" value="Canada" name="sitter_country"
-            [(ngModel)]="petCarerInfo.sitter_country">
-        </div>
-        <div class="form-group col-sm-8">
-          <label for="sitter_dob">Date of Birthday</label>
-          <input class="form-control" type="date" value="2011-08-19" id="sitter_dob" name="sitter_dob"
-            [(ngModel)]="petCarerInfo.sitter_dob">
-        </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label for="sitter_country">Country</label>
+        <input type="text" class="form-control" id="sitter_country" value="Canada" name="sitter_country"
+          [(ngModel)]="petCarerInfo.sitter_country">
+      </div>
+      <div class="form-group col-sm-8">
+        <label for="sitter_dob">Date of Birthday</label>
+        <input class="form-control" type="date" value="2011-08-19" id="sitter_dob" name="sitter_dob"
+          [(ngModel)]="petCarerInfo.sitter_dob">
       </div>
     </div>
-
     <div class="form-group">
       <label for="sitter_phone">Phone Number</label>
       <input type="text" class="form-control" id="sitter_phone" name="sitter_phone" placeholder="9876543210"
         [(ngModel)]="petCarerInfo.sitter_phone"><br><br>
     </div>
-
-
-
     <a class="btn btn-first" id="profile" (click)="trigger()">Edit Profile</a>
-
   </div>
 
-  <div *ngIf="showMe" class="carer-content-block col-sm-4 mt-2 mb-10">
+  <div *ngIf="showCF2" class="carer-content-block col-sm-4 mt-2 mb-10">
+    <!--Pet Carer form part 2-->
     <h2>My Profile</h2>
-
-    <!--Profile Image-->
-
     <div class="profile-img">
       <img class="rounded-circle" id="displayPicture" src="/assets/images/petCarerProfile.JPG"
         data-holder-rendered="true" alt="profile photo" width="160" height="180">
@@ -100,8 +92,7 @@
     <div class="custom-file">
       <input type="file" class="custom-file-input" id="profilePicture"
         onchange="document.getElementById('displayPicture').src = window.URL.createObjectURL(this.files[0])"
-        aria-describedby="sitter_photo" name="sitter_photo" 
-        [(ngModel)]="petCarerInfo.sitter_photo">
+        aria-describedby="sitter_photo" name="sitter_photo" [(ngModel)]="petCarerInfo.sitter_photo">
       <label class="custom-file-label" for="profilePicture">Choose file</label>
     </div>
     <br>
@@ -109,10 +100,9 @@
     <br>
     <div class="form-group">
       <label for="sitter_password">Choose a password</label>
-      <input type="text" class="form-control" id="sitter_password" name="sitter_password" 
+      <input type="text" class="form-control" id="sitter_password" name="sitter_password"
         [(ngModel)]="petCarerInfo.sitter_password"><br>
     </div>
-   
     <div class="form-group">
       <label for="sitter_petpref">Breed Preference</label>
       <select class="form-control" id="sitter_petpref" required="required" name="sitter_petpref"
@@ -127,7 +117,6 @@
         <option value="others">Others</option>
       </select>
     </div>
-
     <br>
     <div class="form-group">
       <label for="sitter_location">Service Neighborhood</label>
@@ -145,7 +134,6 @@
         <option value="woodfield">Woodfield</option>
       </select>
     </div>
-
     <br>
     <div class="card">
       <div class="card-header">
@@ -156,12 +144,18 @@
         [(ngModel)]="petCarerInfo.sitter_intro"></textarea>
     </div>
     <br>
-    <div class="form-group col-sm-4">
-      <label for="sitter_price">Hourly Price</label>
-      <input type="text" class="form-control" id="sitter_price" value="Canada" name="sitter_price"
-        [(ngModel)]="petCarerInfo.sitter_price">
+    <div class="card">
+      <div class="card-header">
+        Expected Payment
+      </div>
+      <div class="card-body">
+        <div class="form-group col-sm-4">
+          <label for="sitter_price">Hourly</label>
+          <input type="text" class="form-control" id="sitter_price" value="Canada" name="sitter_price"
+            [(ngModel)]="petCarerInfo.sitter_price">
+        </div>
+      </div>
     </div>
-
     <br>
     <div class="card">
       <div class="card-header">
@@ -171,42 +165,57 @@
         <p class="card-text">Please upload a file.</p>
         <div class="custom-file">
           <input type="file" class="custom-file-input" id="sitter_policeCheck" aria-describedby="sitter_policeCheck"
-            name="sitter_policeCheck"
-             [(ngModel)]="petCarerInfo.sitter_policeCheck">
+            name="sitter_policeCheck" [(ngModel)]="petCarerInfo.sitter_policeCheck">
           <label class="custom-file-label" for="sitter_policeCheck">Choose file</label>
         </div>
       </div>
     </div>
     <br>
-    <h2>Bank Information</h2>
     <br>
     <div class="card">
-
-      <div class="form-group col-sm-6">
-        <label for="sitter_bankAccNum">Account Number</label>
-        <input type="text" class="form-control" id="sitter_bankAccNum" name="sitter_bankAccNum"
-          [(ngModel)]="petCarerInfo.sitter_bankAccNum">
+      <div class="card-header">
+        Bank Information
       </div>
-      <div class="form-group col-sm-6">
-        <label for="sitter_bankAccType">Account Type</label>
-        <input type="text" class="form-control" id="sitter_bankAccType" name="sitter_bankAccType"
-          [(ngModel)]="petCarerInfo.sitter_bankAccType">
+      <div class="card-body">
+        <div class="card">
+          <div class="form-group col-sm-6">
+            <label for="sitter_bankAccNum">Account Number</label>
+            <input type="text" class="form-control" id="sitter_bankAccNum" name="sitter_bankAccNum"
+              [(ngModel)]="petCarerInfo.sitter_bankAccNum">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="sitter_bankAccType">Account Type</label>
+            <input type="text" class="form-control" id="sitter_bankAccType" name="sitter_bankAccType"
+              [(ngModel)]="petCarerInfo.sitter_bankAccType">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="sitter_bankBranch">Branch</label>
+            <input type="text" class="form-control" id="sitter_bankBranch" name="sitter_bankBranch"
+              [(ngModel)]="petCarerInfo.sitter_bankBranch">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="sitter_bankName">Bank Name</label>
+            <input type="text" class="form-control" id="sitter_bankName" name="sitter_bankName"
+              [(ngModel)]="petCarerInfo.sitter_bankName">
+          </div>
+        </div>
       </div>
-      <div class="form-group col-sm-6">
-        <label for="sitter_bankBranch">Branch</label>
-        <input type="text" class="form-control" id="sitter_bankBranch" name="sitter_bankBranch"
-          [(ngModel)]="petCarerInfo.sitter_bankBranch">
-      </div>
-      <div class="form-group col-sm-6">
-        <label for="sitter_bankName">Bank Name</label>
-        <input type="text" class="form-control" id="sitter_bankName" name="sitter_bankName"
-          [(ngModel)]="petCarerInfo.sitter_bankName">
-      </div>
-
     </div>
     <br>
-    <a class="btn btn-first" routerLink="/profile" routerLinkActive="active">See Profile</a>
-    <input class="btn btn-first" type="submit" value="Submit">
-
+    <input class="btn btn-first" type="submit" id="submit" value="Submit">
   </div>
 </form>
+<div *ngIf="showAlertCF2" class="carer-content-block col-sm-4 mt-2 mb-10">
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>We have received your application and want to thank you for your interest in 4Paws. We will be reviewing all
+      applications, and those candidates that most closely match our current requirements for this position will be
+      contacted.
+      We wish you every success in your career endeavours.<br>
+
+      Best regards, <br>
+
+      4Pwas Talent Acquisition Team</p>
+  </div>
+  <a class="btn btn-first" routerLink="/profile" routerLinkActive="active">See Profile</a>
+</div>

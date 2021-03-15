@@ -10,30 +10,43 @@ import { EnrollmentService } from '../enrollment.service';
 })
 
 export class PetCarerComponent implements OnInit {
-  showMe: boolean = false;
-  hideMe:boolean = true;
+  showAlertCF2: boolean = false;
+  showCF2: boolean = false;
+  hideCF1:boolean = true;
   petCarerInfo = new Petcarer('', '','','', '', '', '', '', '', '','','','','','','','','','','','');
-  
-
+  res: any;
+ 
   constructor(
     private _enrollmentService: EnrollmentService
   ) { }
 
   ngOnInit(): void {
+    this._enrollmentService.setMessage(this.petCarerInfo);
   }
 
   onSubmit(){
-    //console.log(this.petCarerInfo);
-    this._enrollmentService.enroll(this.petCarerInfo)
-    .subscribe(
-      data => console.log('Success!', data),
+     this._enrollmentService.enroll(this.petCarerInfo)
+    .subscribe(      
+      data => {
+      this.res = data;
+      console.log('Success!' + this.res);
+      this._enrollmentService.getCarerSingleProfile(this.res);
+    },
       error => console.error('Error!', error)
     )
+    this.showCF2=!this.showCF2;
+    this.showAlertCF2=!this.showAlertCF2;
+
   }
 
   trigger(){
-    this.showMe=!this.showMe;
-    this.hideMe=!this.hideMe;
+    this.showCF2=!this.showCF2;
+    this.hideCF1=!this.hideCF1;
+  }
+
+  trigger2(){
+    this.showCF2=!this.showCF2;
+    this.showAlertCF2=!this.showAlertCF2;
   }
 
 
