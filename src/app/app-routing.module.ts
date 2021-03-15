@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'signin', component:SigninComponent},
   { path: 'register', component:RegisterComponent},
   { path: 'petInfo', component:PetInformationComponent},
+  
   { path: 'search', component:SearchComponent}
 ];
 
