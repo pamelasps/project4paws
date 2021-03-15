@@ -7,6 +7,8 @@ import { SigninComponent } from './signin/signin.component';
 import { RegisterComponent } from './register/register.component'
 import { PetInformationComponent } from './pet-information/pet-information.component';
 import { SearchComponent } from './search/search.component'
+import { AboutComponent } from './about/about.component'
+import { ContactusComponent } from './contactus/contactus.component'
 
 const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch:'full'},
@@ -16,7 +18,8 @@ const routes: Routes = [
   { path: 'signin', component:SigninComponent},
   { path: 'register', component:RegisterComponent},
   { path: 'petInfo', component:PetInformationComponent},
-  
+  { path: 'about', component:AboutComponent},
+  { path: 'contactUs', component:ContactusComponent},
   { path: 'search', component:SearchComponent}
 ];
 
