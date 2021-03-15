@@ -38,11 +38,25 @@ a.btn {
     border-radius: 20px;
 }
 
+input.btn {
+    margin: 30px 10px;
+    width:150px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
 a.btn-first
 {
     background-color: darkorange;
     color: #fff;
 }
+
+input.btn-first
+{
+    background-color: darkorange;
+    color: #fff;
+}
+
 
 a.btn-second {
     background: transparent;
@@ -51,6 +65,14 @@ a.btn-second {
 }
 
 a.btn:hover {
+    background: darkorange;
+    border:none;
+    color:#fff;
+    box-shadow: 5px 5px 10px #999;
+    transition: 0.3s;
+}
+
+input.btn:hover {
     background: darkorange;
     border:none;
     color:#fff;

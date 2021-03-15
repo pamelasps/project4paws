@@ -9,6 +9,10 @@ import { EnrollmentService } from '../enrollment.service';
 })
 export class RegisterComponent implements OnInit {
 
+  showAlertCF2: boolean = false;
+  showCF2: boolean = false;
+  hideCF1:boolean = true;
+
   showMe: boolean = false;
   hideMe:boolean = true;
   petOwnerInfo = new Petowner('','','','','','','','','','','','','','','');
@@ -27,14 +31,21 @@ export class RegisterComponent implements OnInit {
       data => console.log('Success!', data),
       error => console.error('Error!', error)
     )
+
+    this.showCF2=!this.showCF2;
+    this.showAlertCF2=!this.showAlertCF2;
+
   }
 
   trigger(){
-    this.showMe=!this.showMe;
-    this.hideMe=!this.hideMe;
+    this.showCF2=!this.showCF2;
+    this.hideCF1=!this.hideCF1;
+  }
+
+  trigger2(){
+    this.showCF2=!this.showCF2;
+    this.showAlertCF2=!this.showAlertCF2;
   }
 
 
 }
-
-
