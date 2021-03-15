@@ -31,6 +31,10 @@ export class RegisterComponent implements OnInit {
       data => console.log('Success!', data),
       error => console.error('Error!', error)
     )
+
+    this.showCF2=!this.showCF2;
+    this.showAlertCF2=!this.showAlertCF2;
+
   }
 
   trigger(){

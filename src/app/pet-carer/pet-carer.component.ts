@@ -48,8 +48,4 @@ export class PetCarerComponent implements OnInit {
     this.showCF2=!this.showCF2;
     this.showAlertCF2=!this.showAlertCF2;
   }
-
-
-
-
 }

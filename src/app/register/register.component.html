@@ -56,19 +56,19 @@
           <input type="text" class="form-control" id="petOwnerPostcode" name="petOwnerPostcode"
           [(ngModel)]="petOwnerInfo.owner_postalCode">
         </div>
+      </div>
+      <div class="row">
         <div class="form-group col-sm-4">
           <label for="petOwnerCountry">Country</label>
           <input type="text" class="form-control" id="petOwnerCountry" value="Canada" name="petOwnerCountry"
             [(ngModel)]="petOwnerInfo.owner_country">
         </div>
+        <div class="form-group col-sm-8">
+          <label for="owner_dob">Date of Birthday</label>
+          <input class="form-control" type="date" value="2011-08-19" id="owner_dob" name="owner_dob"
+            [(ngModel)]="petOwnerInfo.owner_dob">
+        </div>
       </div>
-      
-      <div class="form-group col-sm-8">
-        <label for="owner_dob">Date of Birthday</label>
-        <input class="form-control" type="date" value="2011-08-19" id="owner_dob" name="owner_dob"
-          [(ngModel)]="petOwnerInfo.owner_dob">
-      </div>
-
       <div class="form-group" style="margin-bottom: 0px;">
         <label for="phone">Phone Number</label>
           <input type="text" class="form-control" id="phone" name="phone" placeholder="9876543210"
@@ -84,6 +84,7 @@
   </div>
 
   <div *ngIf="showCF2" class="carer-content-block col-sm-4 mt-2 mb-10">
+    
     <!--Pet Owner form part 2 - Bank Information-->
 
     <div class="card">
@@ -92,38 +93,42 @@
       </div>
       <div class="card-body">
         <div class="card">
-          <div class="form-group" style="margin-bottom: 0px;">
+          <div class="form-group col-sm-12">
             <label for="bankname">Bank Name</label>
               <input type="text" class="form-control" id="bankname" name="bankname" 
-              [(ngModel)]="petOwnerInfo.owner_bankName"><br><br>
+              [(ngModel)]="petOwnerInfo.owner_bankName">
           </div>
-          <br>
-          <div class="form-group" style="margin-bottom: 0px;">
+          <div class="form-group col-sm-12">
             <label for="bankbranch">Branch</label>
               <input type="text" class="form-control" id="branch" name="branch" 
-              [(ngModel)]="petOwnerInfo.owner_bankBranch"><br><br>
+              [(ngModel)]="petOwnerInfo.owner_bankBranch">
           </div>
-          <br>
-          <div class="form-group" style="margin-bottom: 0px;">
+          <div class="form-group col-sm-12">
             <label for="bankacctype">Account Type</label>
               <input type="text" class="form-control" id="bankacctype" name="bankacctype" 
-              [(ngModel)]="petOwnerInfo.owner_bankAccType"><br><br>
+              [(ngModel)]="petOwnerInfo.owner_bankAccType">
           </div>
-          <br>
-          <div class="form-group" style="margin-bottom: 0px;">
+          <div class="form-group col-sm-12">
             <label for="bankaccnum">Account Number</label>
               <input type="text" class="form-control" id="bankaccnum" name="bankaccnum" 
-              [(ngModel)]="petOwnerInfo.owner_bankAccNum"><br><br>
+              [(ngModel)]="petOwnerInfo.owner_bankAccNum">
           </div>
         </div>
       </div>
-        
-      
-
     </div>
     <input class="btn btn-first" type="submit" id="submit" value="Submit">
   </div>
-
 </form>
 
+<div *ngIf="showAlertCF2" class="carer-content-block col-sm-4 mt-2 mb-10">
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>User registration was successful! You can now reserve a pet carer for your pet.<br><br>
+
+      Best regards, <br><br>
+
+      4Paws Company.</p>
+  </div>
+  <a class="btn btn-first" routerLink="/search" routerLinkActive="active">Search Pet Carers</a>
+</div>
 <br>
