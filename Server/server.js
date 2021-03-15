@@ -90,3 +90,25 @@ app.get('/carerProfile/:id', (req, res) => {
     });
 
 });
+
+//Insert PetCarer registration into SITTER table in 4Paws database
+//Towards server
+app.post('/petOwner', function (req, res) { 
+    let postBody = req.body;
+    //Console on Server terminal the body request from client
+    console.log(postBody);
+    //SQL query to be executed
+    let sql = "INSERT INTO owner SET ?";
+    let postQuery = db.query(sql, postBody, (err, results) => {
+        if (err) throw err;
+        console.log('Registered!');
+        //Message send to Client console as response for data received
+       
+        res.status(200).end(JSON.stringify(results.insertId));
+        //let id = JSON.stringify(results.insertId);
+        //console.log(id);
+
+    });
+    
+
+});
