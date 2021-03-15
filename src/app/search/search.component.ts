@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./search.component.css']
     })
 
+    
+    // for testing DB purpose but not visible in the browser
     export class SearchComponent {
       elements: any = [
         {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
@@ -14,5 +16,10 @@ import { Component, OnInit } from '@angular/core';
       ];
     
       headElements = ['ID', 'First', 'Last', 'Handle'];
+
+      myFunction() {
+        alert("Request sent!");
+      
+      }
     
     }

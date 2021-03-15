@@ -1,5 +1,45 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+  </head>
+  <body>
+	<div class="wrapper">
+	  <section class="one">
+	   <!--  Search block 1 from here  -->
+	  <div class="search-block-1">
+		<span class="title">Book A Dog Walker</span>
+		<div class="area">
+		  <span class="label">Area</span>
+		  <select id="area-options">
+			<option value="option-1">Any Area</option>
+			<option value="option-2">Argyle</option>
+			<option value="option-3">Byron</option>
+		  </select>
+		</div>
+		
+		<div class="date-time">
+		  <div class="container-date-time">
+			<div class="container-date">
+			  <span class="label">Date</span>
+			  <input type="date" placeholder="dd-mm-yyyy">
+			</div>
+			<div class="container-time">
+			  <span class="label">Time</span>
+			  <select name="" id="">
+				<option value="option-1">12:00</option>
+				<option value="option-2">12:30</option>
+				<option value="option-3">14:00</option>
+			  </select>
+			</div>
+		  </div>
+		</div>		
+		<button class="btn primary" (click)="myFunction()">Request a Booking</button>
+	  </div>   
+	  <!--  End search block 1 -->
+	  </section>
+	  
+	</div>
+  </body>
 <div class="container">
 	<div class="search">
 		<input type="text" class="searchTerm" placeholder="Search">
@@ -28,7 +68,10 @@
 		    <tr>
 		      <th scope="row">1</th>
 		      <td class="w-25">
-			      <img src="assets/images/dogWalkerTable3.jpg" class="img-fluid img-thumbnail" alt="table1">
+				<a class="img-fluid img-thumbnail" href="search">
+					<img src="assets/images/dogWalkerTable3.jpg" class="img-fluid img-thumbnail" alt="table1">
+					<div class="text">Go To Booking</div>
+				</a>
 		      </td>
 		      <td>Growing up, our home was always filled with animals. I own 2 cats (Lily & James).
             I was formerly a volunteer dog walker at the Humane Society of London Middlesex.
@@ -50,8 +93,12 @@
 		    <tr>
 		      <th scope="row">2</th>
 		      <td class="w-25">
-			      <img src="assets/images/dogWalkerTable2.jpg" class="img-fluid img-thumbnail" alt="table2">
+				<a class="img-fluid img-thumbnail" href="search">
+					<img src="assets/images/dogWalkerTable2.jpg" class="img-fluid img-thumbnail" alt="table2">
+					<div class="text">Go To Booking</div>
+				</a>
 		      </td>
+			  
 		      <td>Rob, Sarah (dad and mom) and Olivia and Abby (8 and 6 year old daughters) are experienced dog owners
             that would provide safe, loving care for your dog. We would work as a team to look after your dog, go for walks, 
             give it attention and lots of cuddles. We recently had the great experience of adopting, training and raising our family dog.</td>
@@ -69,7 +116,10 @@
         <tr>
 		      <th scope="row">3</th>
 		      <td class="w-25">
-			      <img src="assets/images/dogWalkerTable1.png" class="img-fluid img-thumbnail" alt="table3">
+				  <a class="img-fluid img-thumbnail" href="search">
+					<img src="assets/images/dogWalkerTable1.png" class="img-fluid img-thumbnail" alt="table3">
+					<div class="text">Go To Booking</div>
+				</a>
 		      </td>
 		      <td>I am a graduate student at Western University, so my schedule is quite flexible. I grew up with a cavalier king charles 
             spaniel, so I am very used to the ins and outs of pet care including walking, feeding, bathroom duty, and of course, affection.</td>
