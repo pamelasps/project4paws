@@ -12,4 +12,12 @@ export class ContactusComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  myFunction() {
+    alert("Message sent successfully!");
+    (<HTMLInputElement>document.getElementById("exampleFormControlInput1")).value = ""; 
+    (<HTMLInputElement>document.getElementById("exampleFormControlInput2")).value = ""; 
+    (<HTMLInputElement>document.getElementById("exampleFormControlTextarea1")).value = ""; 
+  
+  }
+
 }

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  username:string = "";
+  email:string = "";
   password:string = "";
   message:string = "";
   constructor() { }
@@ -15,10 +15,10 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  LoginUser(){
-    if (this.username == 'admin' && this.password == '123'){
+  onSubmit() {
+    if (this.email == 'admin' && this.password == '123'){
       this.message = "Login Successful!!";
     }
   }
 
-}
+} 

@@ -2,8 +2,8 @@
 
   <div class="row d-sm-flex align-items-center justify-content-between">
     <div class="w-100 col-md-6 order-1 order-sm-1" style="background-image:url('assets/images/dogWalkerTable1.jpg'); 
-    height: 100vh; min-height: 400px; background-position:center; background-size: cover;"></div>
-    <div class="col-md-6 order-2 order-sm-2 p-3 p-sm-5">
+    height: 100vh; min-height: 800px; background-position:center; background-size: cover;"></div>
+    <div class="col-md-6 order-2 order-sm-1 p-3 p-sm-5">
       <div class="p-0 p-sm-5">
         
         <h1 class="mb-4 display-4" style="font-weight: 600;"><span style="color:darkorange;">4Paws&nbsp;</span>Help Center</h1>
@@ -16,8 +16,8 @@
           <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <label for="exampleFormControlInput2">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
         </div>
 
         <div class="form-group">
@@ -27,8 +27,9 @@
 
       </form>
       <div class="row">
-        <a href="#" style="background-color: darkorange; width: 180px; height: 55px; font-size: 22px;"
-          class="btn px-4 py-3 text-white d-flex align-items-center justify-content-between">Submit</a>
-        <a href="#" style="background-color: darkorange; width: 180px; height: 55px; font-size: 22px;"
-          class="btn px-4 py-3 text-white d-flex align-items-center justify-content-between">Back to Main</a>
+        <input type="button" (click)="myFunction()" class="btn btn-first" value="Submit">
+        <a href="#" class="btn btn-first">Back to Main</a>
       </div>
+  </div>
+</div>
+

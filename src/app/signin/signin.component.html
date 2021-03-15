@@ -1,25 +1,27 @@
-<div class="carer-content-block col-sm-4 mt-2 mb-10">
-  <h2 style="text-align: center;">Login Form</h2>
-  <div class="imgcontainer">
-    <img src="/assets/images/dog2.jpg" alt="Profile" class="profile">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  
+  <div class="carer-content-block col-sm-4 mt-2 mb-10">
+    <h2 style="text-align: center;">Login Form</h2>
+    <div class="imgcontainer">
+      <img src="/assets/images/dog2.jpg" alt="Profile" class="profile">
+    </div>
+    <div class="form-group">
+      <label for="uname"><b>Email</b></label>
+      <input type="email" class="form-control" placeholder="Enter Email" [(ngModel)]="email">
+    </div>
+
+    <div class="form-group">
+      <label for="psw"><b>Password</b></label>
+      <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password">
+    </div>
+      <button type="submit" class="btn btn-first" (click)="onSubmit()">Login</button>
+
+      <h1>{{message}}</h1>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" class="cancelbtn" routerLink="/home">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
   </div>
-
-  <div class="form-group">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" class="form-control" placeholder="Enter Username" [(ngModel)]="username">
-  </div>
-
-  <div class="form-group">
-    <label for="psw"><b>Password</b></label>
-    <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password">
-  </div>
-
-    <button type="submit" class="btn btn-first" (click)="LoginUser()">Login</button>
-
-    <h1>{{message}}</h1>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn" routerLink="/home">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</div>
+</form>

@@ -19,6 +19,7 @@ export class EnrollmentService {
   _getUrl = 'http://localhost:3000/carerProfile';
   _ownerUrl = 'http://localhost:3000/petOwner';
 
+
   constructor( 
     private _http:HttpClient 
   ) 
@@ -52,6 +53,10 @@ export class EnrollmentService {
   petOwner(user: Petowner){
     return this._http.post<any>(this._ownerUrl, user); //req, res the response component sholud be sent to register.component.ts
   }
+
+  // getByEmail(email: string) {
+  //   return this._http.get<
+  // }
 
  
 
