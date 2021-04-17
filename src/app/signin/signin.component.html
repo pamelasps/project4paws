@@ -8,12 +8,12 @@
     </div>
     <div class="form-group">
       <label for="uname"><b>Email</b></label>
-      <input type="email" class="form-control" placeholder="Enter Email" [(ngModel)]="email">
+      <input type="email" class="form-control" placeholder="Enter Email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
     </div>
 
     <div class="form-group">
       <label for="psw"><b>Password</b></label>
-      <input type="password" class="form-control" placeholder="Enter Password" [(ngModel)]="password">
+      <input type="text" class="form-control" placeholder="Enter Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
     </div>
       <button type="submit" class="btn btn-first" (click)="onSubmit()">Login</button>
 

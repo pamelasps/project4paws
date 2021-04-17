@@ -22,8 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutComponent } from './about/about.component';
 
-import { CancelComponent } from './cancel/cancel.component';
-
 
 @NgModule({
   declarations: [
@@ -38,8 +36,7 @@ import { CancelComponent } from './cancel/cancel.component';
     PetInformationComponent,
     SearchComponent,
     ContactusComponent,
-    AboutComponent,
-    CancelComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,165 +1,160 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-  </head>
-  <body>
-	<div class="wrapper">
-	  <section class="one">
-	   <!--  Search block 1 from here  -->
-	  <div class="search-block-1">
-		<span class="title">Book A Dog Walker</span>
-		<div class="area">
-		  <span class="label">Area</span>
-		  <select id="area-options">			
-			<option value="">Please choose your search neighborhood</option>
-			<option value="allLondon">All London Area</option>
-			<option value="argyle">Argyle</option>
-			<option value="byron">Byron</option>
-			<option value="calring">Carling Heights</option>
-			<option value="cherryhill">Cherry Hill</option>
-			<option value="masonville">Masonville</option>
-			<option value="medway">Medway</option>
-			<option value="oldnorth">Old North</option>
-			<option value="woodfield">Woodfield</option>
-		  </select>
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	
+		<div class="wrapper">
+			<section class="one">
+				<!--  Search block 1 from here  -->
+				<div class="search-block-1">
+					<span class="title">Book A Dog Walker</span>
+					<div class="area">
+						<span class="label">Area</span>
+						<select id="area-options">
+							<option value="option-1">Any Area</option>
+							<option value="option-2">Argyle</option>
+							<option value="option-3">Byron</option>
+						</select>
+					</div>
+
+					<div class="date-time">
+						<div class="container-date-time">
+							<div class="container-date">
+								<span class="label">Date</span>
+								<input type="date" placeholder="dd-mm-yyyy">
+							</div>
+							<div class="container-time">
+								<span class="label">Time</span>
+								<select name="" id="">
+									<option value="option-1">12:00</option>
+									<option value="option-2">12:30</option>
+									<option value="option-3">14:00</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<button class="btn primary" (click)="myFunction()">Request a Booking</button>
+					<button class="btn primary" (click)="cancelFunc()">Cancel</button>
+				</div>
+				<!--  End search block 1 -->
+			</section>
+
 		</div>
-		
-		<div class="date-time">
-		  <div class="container-date-time">
-			<div class="container-date">
-			  <span class="label">Date</span>
-			  <input type="date" placeholder="dd-mm-yyyy">
-			</div>
-			<div class="container-time">
-			  <span class="label">Time</span>
-			  <select name="" id="">
-				<option value="option-1">10:00</option>
-				<option value="option-2">10:30</option>
-				<option value="option-2">11:00</option>
-				<option value="option-2">11:30</option>
-				<option value="option-2">12:00</option>
-				<option value="option-2">12:30</option>
-				<option value="option-3">13:00</option>
-				<option value="option-3">13:30</option>
-				<option value="option-3">14:00</option>
-				<option value="option-3">14:30</option>
-				<option value="option-3">15:00</option>
-				<option value="option-3">15:30</option>
-				<option value="option-3">16:00</option>
-				<option value="option-3">16:30</option>
-				<option value="option-3">17:00</option>
-				<option value="option-3">17:30</option>
-				<option value="option-3">Other</option>
-			  </select>
-			</div>
-		  </div>
-		</div>		
-		<div><button class="btn primary" (click)="myFunction()">Request a Booking</button>
-		<button class="btn primary2" routerLink="/cancel">Cancel a Booking</button></div>
-	  </div>   
-	  <!--  End search block 1 -->
-	  </section>
-	  
-	</div>
-  </body>
+</body>
 <div class="container">
 	<div class="search">
 		<input type="text" class="searchTerm" placeholder="Search">
 		<button type="submit" class="searchButton">
-		  <i class="fa fa-search"></i>
-	   </button>
-	 </div>	
-</div>	
+			<i class="fa fa-search"></i>
+		</button>
+	</div>
+</div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-		<table class="table table-image">
-		  <thead>
-		    <tr>
-		      <th scope="col">Result</th>
-		      <th scope="col">Profile</th>
-          	  <th scope="col">About & Experience</th>
-		      <th scope="col">Name</th>
-		      <th scope="col">Rates</th>
-		      <th scope="col">Service Neighborhood</th>
-			  <th scope="col">Ratings</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td class="w-25">
-				<a class="img-fluid img-thumbnail" href="search">
-					<img src="assets/images/dogWalkerTable3.jpg" class="img-fluid img-thumbnail" alt="table1">
-					<div class="text">Go To Booking</div>
-				</a>
-		      </td>
-		      <td>Growing up, our home was always filled with animals. I own 2 cats (Lily & James).
-            I was formerly a volunteer dog walker at the Humane Society of London Middlesex.
-            I’ve dealt with dogs that have had a wide range of behaviours; lovable family pets, dogs with specific needs, 
-            and even rescues learning to love again. 
-            If your dog is excited and ready to go, that’s great! If they need time to warm up to me, then that’s fine too.
-          </td>
-		      <td>Cristina</td>
-		      <td>$15</td>
-		      <td>Masonville, North Area</td>
-			  <td>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-			  </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td class="w-25">
-				<a class="img-fluid img-thumbnail" href="search">
-					<img src="assets/images/dogWalkerTable2.jpg" class="img-fluid img-thumbnail" alt="table2">
-					<div class="text">Go To Booking</div>
-				</a>
-		      </td>
-			  
-		      <td>Rob, Sarah (dad and mom) and Olivia and Abby (8 and 6 year old daughters) are experienced dog owners
-            that would provide safe, loving care for your dog. We would work as a team to look after your dog, go for walks, 
-            give it attention and lots of cuddles. We recently had the great experience of adopting, training and raising our family dog.</td>
-		      <td>Rob</td>
-		      <td>$18</td>
-		      <td>White Oaks, Pond Mills</td>
-			  <td>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-			  </td>
-		    </tr>
-       		 <tr>
-		      <th scope="row">3</th>
-		      <td class="w-25">
-				  <a class="img-fluid img-thumbnail" href="search">
-					<img src="assets/images/dogWalkerTable1.png" class="img-fluid img-thumbnail" alt="table3">
-					<div class="text">Go To Booking</div>
-				</a>
-		      </td>
-		      <td>I am a graduate student at Western University, so my schedule is quite flexible. I grew up with a cavalier king charles 
-            spaniel, so I am very used to the ins and outs of pet care including walking, feeding, bathroom duty, and of course, affection.</td>
-		      <td>Elle</td>
-		      <td>$16</td>
-		      <td>Byron, Riverbend</td>
-			  <td>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-			  </td>
-		    </tr>
-		</tbody>
-		</table>   
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-12">
+			<table class="table table-image">
+				<thead>
+					<tr>
+						<th scope="col">Result</th>
+						<th scope="col">Profile</th>
+						<th scope="col">About & Experience</th>
+						<th scope="col">Name</th>
+						<th scope="col">Rates</th>
+						<th scope="col">Service Neighborhood</th>
+						<th scope="col">Ratings</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td class="w-25">
+							<a class="img-fluid img-thumbnail" href="search">
+								<img src="assets/images/dogWalkerTable3.jpg" class="img-fluid img-thumbnail"
+									alt="table1">
+								<div class="text">Go To Booking</div>
+							</a>
+						</td>
+						<td>Growing up, our home was always filled with animals. I own 2 cats (Lily & James).
+							I was formerly a volunteer dog walker at the Humane Society of London Middlesex.
+							I’ve dealt with dogs that have had a wide range of behaviours; lovable family pets, dogs
+							with specific needs,
+							and even rescues learning to love again.
+							If your dog is excited and ready to go, that’s great! If they need time to warm up to me,
+							then that’s fine too.
+						</td>
+						<td>Cristina</td>
+						<td>$15</td>
+						<td>Masonville, North Area</td>
+						<td>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td class="w-25">
+							<a class="img-fluid img-thumbnail" href="search">
+								<img src="assets/images/dogWalkerTable2.jpg" class="img-fluid img-thumbnail"
+									alt="table2">
+								<div class="text">Go To Booking</div>
+							</a>
+						</td>
+
+						<td>Rob, Sarah (dad and mom) and Olivia and Abby (8 and 6 year old daughters) are experienced
+							dog owners
+							that would provide safe, loving care for your dog. We would work as a team to look after
+							your dog, go for walks,
+							give it attention and lots of cuddles. We recently had the great experience of adopting,
+							training and raising our family dog.</td>
+						<td>Rob</td>
+						<td>$18</td>
+						<td>White Oaks, Pond Mills</td>
+						<td>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td class="w-25">
+							<a class="img-fluid img-thumbnail" href="search">
+								<img src="assets/images/dogWalkerTable1.png" class="img-fluid img-thumbnail"
+									alt="table3">
+								<div class="text">Go To Booking</div>
+							</a>
+						</td>
+						<td>I am a graduate student at Western University, so my schedule is quite flexible. I grew up
+							with a cavalier king charles
+							spaniel, so I am very used to the ins and outs of pet care including walking, feeding,
+							bathroom duty, and of course, affection.</td>
+						<td>Elle</td>
+						<td>$16</td>
+						<td>Byron, Riverbend</td>
+						<td>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>
+
 
 
 

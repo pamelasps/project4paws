@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Petcarer } from './petcarer';
+import { Booking } from './booking';
 import { PetCarerProfile } from './petcarerprofile';
 import { Observable } from 'rxjs';
 // Daniele
@@ -18,6 +19,8 @@ export class EnrollmentService {
   _url = 'http://localhost:3000/enroll';
   _getUrl = 'http://localhost:3000/carerProfile';
   _ownerUrl = 'http://localhost:3000/petOwner';
+  _bookingUrl = 'http://localhost:3000/booking';
+  _cancelUrl = 'http://localhost:3000/cancel';
 
 
   constructor( 
@@ -42,6 +45,14 @@ export class EnrollmentService {
   //req, res the response should be sent to petcarerprofile.component.ts
   getProfile(): Observable <PetCarerProfile[]> {
     return this._http.get<PetCarerProfile[]>(this._getUrl);
+  }
+
+  getBooking(user: Booking){
+    return this._http.post<Booking[]>(this._bookingUrl, user);
+  }
+
+  getCancel(user: Booking){
+    return this._http.post<Booking[]>(this._cancelUrl, user);
   }
 
   getCarerSingleProfile(id: number): Observable<PetCarerProfile> {
