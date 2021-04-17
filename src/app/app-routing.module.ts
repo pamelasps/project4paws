@@ -9,6 +9,7 @@ import { PetInformationComponent } from './pet-information/pet-information.compo
 import { SearchComponent } from './search/search.component'
 import { AboutComponent } from './about/about.component'
 import { ContactusComponent } from './contactus/contactus.component'
+import { CancelComponent } from './cancel/cancel.component'
 
 const routes: Routes = [
   { path:'', redirectTo: '/home', pathMatch:'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'petInfo', component:PetInformationComponent},
   { path: 'about', component:AboutComponent},
   { path: 'contactUs', component:ContactusComponent},
-  { path: 'search', component:SearchComponent}
+  { path: 'search', component:SearchComponent},
+  { path: 'cancel', component:CancelComponent}
 ];
 
 @NgModule({
