@@ -124,7 +124,7 @@ body .wrapper section .search-block {
 .search-block-1 {
   color: #091F2F;
   background: #FCB61A;
-  width: 50%;
+  width: 120%;
   border-radius: 4px;
   padding: 12px;
   box-sizing: border-box;
@@ -213,6 +213,16 @@ body .wrapper section .search-block {
 .search-block-1 button.btn.primary:focus {
   outline: none;
 }
+
+.carer-content-block {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: auto;
+  padding: 10px;
+ 
+}
+
+
 /* End of styling for the first search block */
 
 

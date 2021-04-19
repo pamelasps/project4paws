@@ -8,10 +8,13 @@
 
 <body>
 	<div *ngIf="showCF2">
-		<h1>Booking</h1>
-		<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+		
 
-			<div class="container">
+		
+		<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+			<div class="carer-content-block col-sm-4 mt-2 mb-10">
+			
+				<h1>Booking</h1>
 				<section class="one">
 					<!--  Search block 1 from here  -->
 					<div class="search-block-1">
@@ -71,15 +74,18 @@
 								</div>
 							</div>
 						</div>
+					
 						<div>
 							<input class="btn btn-first" type="submit" id="submit" value="Request a Booking">
 							
-							<button class="btn primary2" routerLink="/cancel">Cancel a Booking</button>
+							<input class="btn btn-first" routerLink="/cancel" value="Cancel a Booking">
 						</div>
 					</div>
 
 
 				</section>
+
+				
 			</div>
 		</form>
 
