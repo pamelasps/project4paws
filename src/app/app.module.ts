@@ -21,6 +21,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactusComponent } from './contactus/contactus.component';
 import { AboutComponent } from './about/about.component';
+import { CancelationComponent } from './cancelation/cancelation.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { AboutComponent } from './about/about.component';
     PetInformationComponent,
     SearchComponent,
     ContactusComponent,
-    AboutComponent
+    AboutComponent,
+    CancelationComponent
   ],
   imports: [
     BrowserModule,

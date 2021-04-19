@@ -4,8 +4,8 @@ import { Petcarer } from './petcarer';
 import { Booking } from './booking';
 import { PetCarerProfile } from './petcarerprofile';
 import { Observable } from 'rxjs';
-// Daniele
 import { Petowner } from './petowner';
+//import { Cancellation } from './cancellation';
 
 
 @Injectable({
@@ -20,7 +20,7 @@ export class EnrollmentService {
   _getUrl = 'http://localhost:3000/carerProfile';
   _ownerUrl = 'http://localhost:3000/petOwner';
   _bookingUrl = 'http://localhost:3000/booking';
-  _cancelUrl = 'http://localhost:3000/cancel';
+  _cancelUrl = 'http://localhost:3000/cancelation';
 
 
   constructor( 
@@ -61,15 +61,9 @@ export class EnrollmentService {
     //implement handle error here
   }
 
+  //req, res the response component sholud be sent to register.component.ts
   petOwner(user: Petowner){
-    return this._http.post<any>(this._ownerUrl, user); //req, res the response component sholud be sent to register.component.ts
+    return this._http.post<any>(this._ownerUrl, user); 
   }
-
-  // getByEmail(email: string) {
-  //   return this._http.get<
-  // }
-
- 
-
 
 }

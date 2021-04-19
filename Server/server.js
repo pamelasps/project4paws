@@ -29,8 +29,8 @@ app.listen(PORT, function () {
 let db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
-    database: '4paws'
+    password: 'root',
+    database: '4pawsv6'
 
 });
 
@@ -112,5 +112,49 @@ app.post('/petOwner', function (req, res) {
     
 
 });
+
+app.post('/booking', function (req, res) { 
+    let postBody = req.body;
+    //Console on Server terminal the body request from client
+    console.log(postBody);
+    //SQL query to be executed
+    let sql = "INSERT INTO schedule SET ?";
+    //let sql = "INSERT INTO schedule (user_name, user_email,user_date, user_time) VALUES ('Thalis', 'thalis@email.com', '2021-04-16', '1:00')";
+    let postQuery = db.query(sql, postBody, (err, results) => {
+        if (err) throw err;
+        console.log('Registered!');
+        //Message send to Client console as response for data received
+       
+        res.status(200).end(JSON.stringify(results.insertId));
+        //let id = JSON.stringify(results.insertId);
+        //console.log(id);
+
+    });
+    
+
+});
+
+app.post('/cancelation', function (req, res) { 
+    let postBody = req.body;
+    //Console on Server terminal the body request from client
+    console.log(postBody);
+    //SQL query to be executed
+    let sql = "DELETE FROM schedule WHERE user_name = ?";
+    //let sql = "DELETE FROM schedule WHERE user_name = 'Joon'";
+    let postQuery = db.query(sql, postBody.user_name, (err, results) => {
+        if (err) throw err;
+        console.log('Cancelled!');
+        //Message send to Client console as response for data received
+       
+        res.status(200).end(JSON.stringify(results.insertId));
+        //let id = JSON.stringify(results.insertId);
+        //console.log(id);
+
+    });
+    
+
+});
+
+    
 
 

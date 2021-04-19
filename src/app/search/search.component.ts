@@ -9,8 +9,10 @@ import { EnrollmentService } from '../enrollment.service';
     })
 
     
-    // for testing DB purpose but not visible in the browser
     export class SearchComponent {
+      showAlertCF2: boolean = false;
+      showCF2: boolean = false;
+      hideCF1:boolean = true;
       booking = new Booking ('', '', '', '','');
       res: any;
 
@@ -18,20 +20,10 @@ import { EnrollmentService } from '../enrollment.service';
         private _enrollmentService: EnrollmentService
       ) { }
 
-      // elements: any = [
-      //   {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
-      //   {id: 2, first: 'Jacob', last: 'Thornton', handle: '@fat'},
-      //   {id: 3, first: 'Larry', last: 'the Bird', handle: '@twitter'},
-      // ];
     
-      // headElements = ['ID', 'First', 'Last', 'Handle'];
 
-      // myFunction() {
-      //   alert("Request sent!");
-      
-      // }
-
-      myFunction(){
+      onSubmit(){
+        
         this._enrollmentService.getBooking(this.booking)
        .subscribe(      
          data => {
@@ -39,20 +31,24 @@ import { EnrollmentService } from '../enrollment.service';
          console.log('Success!' + this.res);
         },
          error => console.error('Error!', error)
-       )
+       );
+       this.showCF2=!this.showCF2;
+       this.showAlertCF2=!this.showAlertCF2;
+       
       }
 
-      cancelFunc(){
-        this._enrollmentService.getCancel(this.booking)
-       .subscribe(      
-         data => {
-         this.res = data;
-         console.log('Success!' + this.res);
-        },
-         error => console.error('Error!', error)
-       )
+      trigger(){
+        
+        this.hideCF1=!this.hideCF1;
+        this.showCF2=!this.showCF2;
+      }
+
+      trigger2(){
+        this.showCF2=!this.showCF2;
+        this.showAlertCF2=!this.showAlertCF2;
       }
     
+      
     }
 
     

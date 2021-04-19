@@ -1,180 +1,227 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <head>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-  </head>
-  <body>
-	<div class="wrapper">
-	  <section class="one">
-	   <!--  Search block 1 from here  -->
-	  <div class="search-block-1">
-		<span class="title">Book A Dog Walker</span>
-		<div class="area">
-		  <span class="label">Area</span>
-		  <select id="area-options">			
-			<option value="">Please choose your search neighborhood</option>
-			<option value="allLondon">All London Area</option>
-			<option value="argyle">Argyle</option>
-			<option value="byron">Byron</option>
-			<option value="calring">Carling Heights</option>
-			<option value="cherryhill">Cherry Hill</option>
-			<option value="masonville">Masonville</option>
-			<option value="medway">Medway</option>
-			<option value="oldnorth">Old North</option>
-			<option value="woodfield">Woodfield</option>
-		  </select>
-		</div>
-		
-		<div class="date-time">
-		  <div class="container-date-time">
-			<div class="container-date">
-			  <span class="label">Date</span>
-			  <input type="date" placeholder="dd-mm-yyyy">
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div *ngIf="showCF2">
+		<h1>Booking</h1>
+		<form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+
+			<div class="container">
+				<section class="one">
+					<!--  Search block 1 from here  -->
+					<div class="search-block-1">
+						<span class="title">Book A Dog Walker</span>
+						<div class="area">
+							<span class="label">User Name</span><br>
+							<input type="text" value="Group05" name="user_name" [(ngModel)]="booking.user_name">
+						</div>
+						<div class="area">
+							<span class="label">User Email</span><br>
+							<input type="text" value="Group05" name="user_email" [(ngModel)]="booking.user_email">
+						</div>
+						<div class="area">
+							<span class="label">Area</span>
+							<select id="area-options" name="user_area" [(ngModel)]="booking.user_area">
+								<option value="">Please choose your search neighborhood</option>
+								<option value="allLondon">All London Area</option>
+								<option value="argyle">Argyle</option>
+								<option value="byron">Byron</option>
+								<option value="calring">Carling Heights</option>
+								<option value="cherryhill">Cherry Hill</option>
+								<option value="masonville">Masonville</option>
+								<option value="medway">Medway</option>
+								<option value="oldnorth">Old North</option>
+								<option value="woodfield">Woodfield</option>
+							</select>
+						</div>
+
+						<div class="date-time">
+							<div class="container-date-time">
+								<div class="container-date">
+									<span class="label">Date</span>
+									<input type="date" name="user_date" placeholder="dd-mm-yyyy"
+										[(ngModel)]="booking.user_date">
+								</div>
+								<div class="container-time">
+									<span class="label">Time</span>
+									<select name="user_time" id="" [(ngModel)]="booking.user_time">
+										<option>10:00</option>
+										<option>10:30</option>
+										<option>11:00</option>
+										<option>11:30</option>
+										<option>12:00</option>
+										<option>12:30</option>
+										<option>13:00</option>
+										<option>13:30</option>
+										<option>14:00</option>
+										<option>14:30</option>
+										<option>15:00</option>
+										<option>15:30</option>
+										<option>16:00</option>
+										<option>16:30</option>
+										<option>17:00</option>
+										<option>17:30</option>
+										
+									</select>
+								</div>
+							</div>
+						</div>
+						<div>
+							<input class="btn btn-first" type="submit" id="submit" value="Request a Booking">
+							
+							<button class="btn primary2" routerLink="/cancel">Cancel a Booking</button>
+						</div>
+					</div>
+
+
+				</section>
 			</div>
-			<div class="container-time">
-			  <span class="label">Time</span>
-			  <select name="" id="">
-				<option value="option-1">10:00</option>
-				<option value="option-2">10:30</option>
-				<option value="option-2">11:00</option>
-				<option value="option-2">11:30</option>
-				<option value="option-2">12:00</option>
-				<option value="option-2">12:30</option>
-				<option value="option-3">13:00</option>
-				<option value="option-3">13:30</option>
-				<option value="option-3">14:00</option>
-				<option value="option-3">14:30</option>
-				<option value="option-3">15:00</option>
-				<option value="option-3">15:30</option>
-				<option value="option-3">16:00</option>
-				<option value="option-3">16:30</option>
-				<option value="option-3">17:00</option>
-				<option value="option-3">17:30</option>
-				<option value="option-3">Other</option>
-			  </select>
-			</div>
-		  </div>
-		</div>		
-		<div><button class="btn primary" (click)="myFunction()">Request a Booking</button>
-		<button class="btn primary2" routerLink="/cancel">Cancel a Booking</button></div>
-	  </div>   
-	  <!--  End search block 1 -->
-	  </section>
-	  
+		</form>
+
 	</div>
-  </body>
-<div class="container">
-	<div class="search">
-		<input type="text" class="searchTerm" placeholder="Search">
-		<button type="submit" class="searchButton">
-		  <i class="fa fa-search"></i>
-	   </button>
-	 </div>	
-</div>	
 
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-		<table class="table table-image">
-		  <thead>
-		    <tr>
-		      <th scope="col">Result</th>
-		      <th scope="col">Profile</th>
-          	  <th scope="col">About & Experience</th>
-		      <th scope="col">Name</th>
-		      <th scope="col">Rates</th>
-		      <th scope="col">Service Neighborhood</th>
-			  <th scope="col">Ratings</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td class="w-25">
-				<a class="img-fluid img-thumbnail" href="search">
-					<img src="assets/images/dogWalkerTable3.jpg" class="img-fluid img-thumbnail" alt="table1">
-					<div class="text">Go To Booking</div>
-				</a>
-		      </td>
-		      <td>Growing up, our home was always filled with animals. I own 2 cats (Lily & James).
-            I was formerly a volunteer dog walker at the Humane Society of London Middlesex.
-            I’ve dealt with dogs that have had a wide range of behaviours; lovable family pets, dogs with specific needs, 
-            and even rescues learning to love again. 
-            If your dog is excited and ready to go, that’s great! If they need time to warm up to me, then that’s fine too.
-          </td>
-		      <td>Cristina</td>
-		      <td>$15</td>
-		      <td>Masonville, North Area</td>
-			  <td>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-			  </td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td class="w-25">
-				<a class="img-fluid img-thumbnail" href="search">
-					<img src="assets/images/dogWalkerTable2.jpg" class="img-fluid img-thumbnail" alt="table2">
-					<div class="text">Go To Booking</div>
-				</a>
-		      </td>
-			  
-		      <td>Rob, Sarah (dad and mom) and Olivia and Abby (8 and 6 year old daughters) are experienced dog owners
-            that would provide safe, loving care for your dog. We would work as a team to look after your dog, go for walks, 
-            give it attention and lots of cuddles. We recently had the great experience of adopting, training and raising our family dog.</td>
-		      <td>Rob</td>
-		      <td>$18</td>
-		      <td>White Oaks, Pond Mills</td>
-			  <td>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-			  </td>
-		    </tr>
-       		 <tr>
-		      <th scope="row">3</th>
-		      <td class="w-25">
-				  <a class="img-fluid img-thumbnail" href="search">
-					<img src="assets/images/dogWalkerTable1.png" class="img-fluid img-thumbnail" alt="table3">
-					<div class="text">Go To Booking</div>
-				</a>
-		      </td>
-		      <td>I am a graduate student at Western University, so my schedule is quite flexible. I grew up with a cavalier king charles 
-            spaniel, so I am very used to the ins and outs of pet care including walking, feeding, bathroom duty, and of course, affection.</td>
-		      <td>Elle</td>
-		      <td>$16</td>
-		      <td>Byron, Riverbend</td>
-			  <td>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-				<span class="fa fa-star checked"></span>
-			  </td>
-		    </tr>
-		</tbody>
-		</table>   
-    </div>
-  </div>
-</div>
+	<!--Booking Confirmation-->
+
+	<div *ngIf="showAlertCF2" class="carer-content-block col-sm-4 mt-2 mb-10">
+		<div class="alert alert-success" role="alert">
+		  <h4 class="alert-heading">Appointment Succeed</h4>
+		  <p>We have received your application and want to thank you for your interest in 4Paws. We will be reviewing all
+			applications, and those candidates that most closely match our current requirements for this position will be
+			contacted.
+			We wish you every success in your career endeavours.<br>
+	  
+			Best regards, <br>
+	  
+			4Pwas Talent Acquisition Team</p>
+		</div>
+		<a class="btn btn-first" routerLink="/home" routerLinkActive="active">Back to home</a>
+	  </div>
 
 
+	<!--  End search block 1 -->
 
-<!-- <table mdbTable>
-  <thead>
-    <tr>
-      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr mdbTableCol *ngFor="let el of elements">
-      <th scope="row">{{el.id}}</th>
-      <td>{{el.first}}</td>
-      <td>{{el.last}}</td>
-      <td>{{el.handle}}</td>
-    </tr>
-  </tbody>
-</table> -->
+
+	<div *ngIf="hideCF1">
+
+		<div class="container">
+			<div class="search">
+				<input type="text" class="searchTerm" placeholder="Search">
+				<button type="submit" class="searchButton">
+					<i class="fa fa-search"></i>
+				</button>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<table class="table table-image">
+						<thead>
+							<tr>
+								<th scope="col">Result</th>
+								<th scope="col">Profile</th>
+								<th scope="col">About & Experience</th>
+								<th scope="col">Name</th>
+								<th scope="col">Rates</th>
+								<th scope="col">Service Neighborhood</th>
+								<th scope="col">Ratings</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td class="w-25">
+									<a class="img-fluid img-thumbnail">
+										<img src="assets/images/dogWalkerTable3.jpg" class="img-fluid img-thumbnail"
+											alt="table1" (click)="trigger()">
+										<div class="text">Go To Booking</div>
+									</a>
+								</td>
+								<td>Growing up, our home was always filled with animals. I own 2 cats (Lily & James).
+									I was formerly a volunteer dog walker at the Humane Society of London Middlesex.
+									I’ve dealt with dogs that have had a wide range of behaviours; lovable family pets,
+									dogs
+									with specific needs,
+									and even rescues learning to love again.
+									If your dog is excited and ready to go, that’s great! If they need time to warm up
+									to
+									me, then that’s fine too.
+								</td>
+								<td>Cristina</td>
+								<td>$15</td>
+								<td>Masonville, North Area</td>
+								<td>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td class="w-25">
+									<a class="img-fluid img-thumbnail">
+										<img src="assets/images/dogWalkerTable2.jpg" class="img-fluid img-thumbnail"
+											alt="table2" (click)="trigger()">
+										<div class="text">Go To Booking</div>
+									</a>
+								</td>
+
+								<td>Rob, Sarah (dad and mom) and Olivia and Abby (8 and 6 year old daughters) are
+									experienced dog owners
+									that would provide safe, loving care for your dog. We would work as a team to look
+									after
+									your dog, go for walks,
+									give it attention and lots of cuddles. We recently had the great experience of
+									adopting,
+									training and raising our family dog.</td>
+								<td>Rob</td>
+								<td>$18</td>
+								<td>White Oaks, Pond Mills</td>
+								<td>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td class="w-25">
+									<a class="img-fluid img-thumbnail">
+										<img src="assets/images/dogWalkerTable1.png" class="img-fluid img-thumbnail"
+											alt="table3" (click)="trigger()">
+										<div class="text">Go To Booking</div>
+									</a>
+								</td>
+								<td>I am a graduate student at Western University, so my schedule is quite flexible. I
+									grew
+									up with a cavalier king charles
+									spaniel, so I am very used to the ins and outs of pet care including walking,
+									feeding,
+									bathroom duty, and of course, affection.</td>
+								<td>Elle</td>
+								<td>$16</td>
+								<td>Byron, Riverbend</td>
+								<td>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+									<span class="fa fa-star checked"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
